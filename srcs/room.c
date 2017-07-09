@@ -6,7 +6,7 @@
 /*   By: pluu <pluu@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/09 14:11:17 by pluu              #+#    #+#             */
-/*   Updated: 2017/07/09 14:44:52 by pluu             ###   ########.fr       */
+/*   Updated: 2017/07/09 15:16:40 by pluu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	is_room(char *s)
 {
 	t_is_room_link	vars;
 
-	if (*s == 'L')
+	if (*s == 'L' || *s == '#')
 		return (0);
 	init_is_room_link(&vars);
 	while (*s)

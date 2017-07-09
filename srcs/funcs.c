@@ -6,7 +6,7 @@
 /*   By: pluu <pluu@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/09 14:38:01 by pluu              #+#    #+#             */
-/*   Updated: 2017/07/09 14:45:23 by pluu             ###   ########.fr       */
+/*   Updated: 2017/07/09 15:18:11 by pluu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,8 @@ int	is_link(char *s)
 {
 	t_is_room_link	vars;
 
+	if (*s == '#')
+		return (0);
 	init_is_room_link(&vars);
 	while (*s)
 	{
