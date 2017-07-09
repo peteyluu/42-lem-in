@@ -6,7 +6,7 @@
 /*   By: pluu <pluu@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/09 13:54:22 by pluu              #+#    #+#             */
-/*   Updated: 2017/07/09 13:56:15 by pluu             ###   ########.fr       */
+/*   Updated: 2017/07/09 14:56:36 by pluu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static void	add_path(t_map **info, t_hashentry *arr)
 	(*info)->path = path;
 }
 
-void	bfs(t_map **info)
+void		bfs(t_map **info)
 {
 	t_bfs	vars;
 

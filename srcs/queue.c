@@ -6,13 +6,13 @@
 /*   By: pluu <pluu@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/09 13:51:38 by pluu              #+#    #+#             */
-/*   Updated: 2017/07/09 13:59:23 by pluu             ###   ########.fr       */
+/*   Updated: 2017/07/09 14:59:04 by pluu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-void	enqueue(t_str_lst **queue, char *s)
+void		enqueue(t_str_lst **queue, char *s)
 {
 	t_str_lst	*tmp;
 	if (!*queue)
@@ -35,7 +35,7 @@ void	enqueue(t_str_lst **queue, char *s)
 	}
 }
 
-char	*dequeue(t_str_lst **queue)
+char		*dequeue(t_str_lst **queue)
 {
 	t_str_lst	*tmp;
 	char		*ret;
@@ -49,7 +49,7 @@ char	*dequeue(t_str_lst **queue)
 	return (ret);	
 }
 
-int	queue_len(t_printnode *queue)
+int		queue_len(t_printnode *queue)
 {
 	int		ret;
 
@@ -62,7 +62,7 @@ int	queue_len(t_printnode *queue)
 	return (ret);
 }
 
-void	enqueue_pnode(t_printnode **queue, int ant_num, char *room, int idx)
+void		enqueue_pnode(t_printnode **queue, int ant_num, char *room, int idx)
 {
 	t_printnode	*tmp;
 
