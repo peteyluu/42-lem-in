@@ -6,7 +6,7 @@
 /*   By: pluu <pluu@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:36:43 by pluu              #+#    #+#             */
-/*   Updated: 2017/07/08 16:33:33 by pluu             ###   ########.fr       */
+/*   Updated: 2017/07/09 14:49:10 by pluu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,61 +103,48 @@ typedef struct			s_run
 	int			len;
 }				t_run;
 
-/* printing */
+/* queue.c */
+void				enqueue(t_str_lst **queue, char *s);
+char				*dequeue(t_str_lst **queue);
 void				enqueue_pnode(t_printnode **queue, int ant_num, char *room, int idx);
 t_printnode			*dequeue_pnode(t_printnode **queue);
-int				len_pnode(t_printnode *queue);
-
-/* hash */
+int				queue_len(t_printnode *queue);
+/* hash.c */
 unsigned long			hash(char *s);
 void				init_hash(t_hashentry **arr);
 void				insert_hash(t_hashentry **arr, char *s, char *val);
 int				is_in_hash(t_hashentry *arr, char *s);
-void				add_path(t_map **info, t_hashentry *arr);
 /* bfs */
 void				bfs(t_map **info);
-void				prepend_str_lst(t_str_lst **path, char *s);
-/* queue funcs */
-void				enqueue(t_str_lst **queue, char *s);
-char				*dequeue(t_str_lst **queue);
-
+/* run.c */
 void				run(t_map **info);
-void				init_run_vars(t_run *vars, t_map **info);
-void				display(t_map **info, t_run *vars);
-void				handle_ant_move(t_run *vars);
+/* node_vec.c */
 void				init_node_vec(t_node_vec **nodes, int sz);
 void				pop_node_vec(t_node_vec **nodes, t_map **info);
 void				add_node_vec(t_node_vec **nodes, t_node *node);
 void				grow_node_vec(t_node_vec **nodes);
 void				dispose_node_vec(t_node_vec **nodes);
-int				str_lst_len(t_str_lst *path);
-void				init_map(t_map **info);
+/* dispose.c */
 void				dispose_map(t_map **info);
 void				dispose_nodes(t_node *nodes);
 void				dispose_str_lst(t_str_lst *lines);
 void				dispose_str_lst1(t_str_lst *path);
 void				dispose_twodarr(char **arr);
-void				line_print(t_str_lst *lines);
-void				path_print_lst(t_str_lst *path);
+/* parser.c */
 int				parser(t_map **info);
-int				is_map(t_map **info);
-int				is_path(t_map **info);
-void				line_append(t_str_lst **lines, char *s);
-int				parse_line(char *s);
-int				pop_attrs(t_map **info, int *type, char *s);
-int				ft_isnumber(char *s);
-int				is_room(char *s);
-int				is_link(char *s);
+/* room.c */
 void				init_is_room_link(t_is_room_link *vars);
-int				is_unicode(int c);
-int				is_room_dup(t_map *info, char *s);
 void				room_append(t_node **room, char *s, int type);
-int				link_append(t_map **info, char *origin, char *dest);
-int				link_append_rooms(t_map **info, char *origin, char *dest);
-int				link_append_hlpr(t_str_lst **links, char *dest);
-void				link_new_append(t_str_lst **links, char *dest, int is_append);
+int				is_room_dup(t_map *info, char *s);
+int				is_room(char *s);
+int				is_unicode(int c);
+/* link.c */
 int				link_add(t_map **info, char *s);
-int				link_exist(t_node *node, char *s);
+/* funcs.c */
+void				line_append(t_str_lst **lines, char *s);
 t_node				*find_node(t_map **info, char *name);
+int				link_exist(t_node *node, char *s);
+int				ft_isnumber(char *s);
+int				is_link(char *s);
 
 #endif

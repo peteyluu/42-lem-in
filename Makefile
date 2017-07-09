@@ -6,7 +6,7 @@
 #    By: pluu <pluu@student.42.us.org>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/07/05 13:18:01 by pluu              #+#    #+#              #
-#    Updated: 2017/07/07 14:30:16 by pluu             ###   ########.fr        #
+#    Updated: 2017/07/09 14:51:19 by pluu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ CFLAGS         += -I $(INCS_DIR) -I $(LIBFT_INCS_DIR)
 CFLAGS         += -g
 LDFLAGS        += -g
 
-FILENAMES      = main.c
+FILENAMES      = main.c dispose.c node_vec.c run.c queue.c \
+		 bfs.c hash.c parser.c room.c link.c funcs.c
 
 SRCS           = $(addprefix $(SRCS_DIR)/, $(FILENAMES))
 
